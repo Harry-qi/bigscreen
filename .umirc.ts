@@ -20,6 +20,9 @@ export default defineConfig({
     'https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0-beta.2/echarts.min.js',
     'https://cdn.jsdelivr.net/npm/@alicloud/cloud-charts@0.1.8/build/index.min.js'
   ],
+  styles:[
+    'https://cdn.jsdelivr.net/npm/@alicloud/cloud-charts@0.1.8/build/index.css'
+  ],
   chainWebpack(config) {
     config.optimization.splitChunks({
       chunks: 'all',
@@ -32,24 +35,6 @@ export default defineConfig({
           priority: -10,
           enforce: true,
         },
-        // 'alicloud': {
-        //   name: 'alicloud',
-        //   test: /[\\/]node_modules[\\/](@alicloud)[\\/]/,
-        //   priority: 1,
-        //   enforce: true,
-        // },
-        // 'g2': {
-        //   name: 'g2',
-        //   test: /[\\/]node_modules[\\/]@alicloud[\\/]cloud-charts[\\/]node_modules[\\/]@antv[\\/](g2)[\\/]/,
-        //   priority: 2,
-        //   enforce: true,
-        // },
-        // '@antv': {
-        //   name: '@antv',
-        //   test: /[\\/]node_modules[\\/](@antv)[\\/]/,
-        //   priority: -11,
-        //   enforce: true,
-        // },
       }
     })
   },

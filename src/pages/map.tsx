@@ -8,7 +8,7 @@ class Map extends Component {
   componentDidMount() {
     api.getMapJson().then((jsonData)=>{
       echarts.registerMap('ZJ', jsonData)
-      const myChart = echarts.init(document.getElementById('main'))
+      const myChart = echarts.init(document.getElementById('main') as HTMLElement)
       const op = {
         visualMap: {
           show:false,
